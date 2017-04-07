@@ -5,9 +5,7 @@
  */
 ;(function ($, window, document, undefined) {
     'use strict';
-
-    $.fn.plugin = function () {
-
+   
         // Check if namespace has already been initialized
         if (!$.namespace) {
             $.namespace = {};
@@ -21,23 +19,22 @@
          */
         $.namespace.plugin = function (elements, options) {
 
-
         };
 
         // Extend the $.fn object
         $.fn.namespace_plugin = function (options) {
 
             // Merge the passed in options with the default options
-            options = $.extend({}, $.fn.plugin.options, options);
+            options = $.extend({}, $.fn.namespace_plugin.options, options);
 
             return this.each(function () {
                 (new $.namespace.plugin(this, options));
             });
         };
-    };
+    
 
     // Default options specified by the developer
-    $.fn.plugin.options = {
+    $.fn.namespace_plugin.options = {
 
     };
 })(jQuery, window, document);
